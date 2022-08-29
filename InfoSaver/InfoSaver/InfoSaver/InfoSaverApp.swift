@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Firebase
-@main
+@main 
 struct InfoSaverApp: App {
     init() {
         FirebaseApp.configure()

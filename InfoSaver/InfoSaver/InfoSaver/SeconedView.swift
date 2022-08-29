@@ -4,77 +4,137 @@
 //
 //  Created by Noura on 28/08/2022.
 //
-
+import ActionButton
+import Combine
 import SwiftUI
-import Firebase 
+
+enum FocusableField: Hashable {
+    case email, password
+}
+
 struct SeconedView: View {
-    @State private var email = ""
-    @State var password = ""
+    @StateObject private var model = ViewModel()
+    @FocusState private var focus: FocusableField?
+    @State var presentThirdView = false
     
     var body: some View {
         
-       
-            ZStack{
-                    Color.theme.buttton
-                        .ignoresSafeArea()
-                        .cornerRadius(55)
-                        .frame(width: 380, height: 410)
-                        .position(x: 190, y: -43)
-                    
+         
+            GroupBox {
+                VStack(spacing: 16) {
                     Image("WelcomeCat")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 330, height: 200)
-                        .position(x: 190, y: 20)
                     
-                    VStack{
-                        TextField("Email", text: $email)
-                            .placeholder(when: email.isEmpty) {
-                                Text("Email")
-                                    
-                                    .foregroundColor(.white)
-                                    
-                             }
-                        Rectangle()
-                            .frame(width: 350, height: 1)
-                          
-                        SecureField("Password", text: $password)
-                            .placeholder(when: password.isEmpty) {
-                                Text("Password")
-                                    .foregroundColor(.white)
-                            }
-                        Rectangle()
-                            .frame(width: 350, height: 1)
-                        
-                        Button {
-                            //sign up
-                        } label: {
-                            Text("Sign Up")
-                                .bold()
-                                .frame(width: 300, height: 40)
-                                .background(Color.theme.buttton)
-                                .foregroundColor(.white)
-                                .cornerRadius(30)
+                    TextField("Email", text: $model.email)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .submitLabel(.next)
+                        .focused($focus, equals: .email)
+                        .onSubmit {
+                            focus = .password
                         }
-                        .padding(.top)
-                            .offset(y: 100)
-                        
-                        Button {
-                            //log In
-                        } label: {
-                            Text("Already have an account? Login")
-                                .bold()
-                                
-                        } .padding(.top)
-                            .offset(y: 110)
+                    
+                    PasswordField(title: "Password", text: $model.password)
+                        .focused($focus, equals: .password)
+                        .submitLabel(.go)
+                        .onSubmit {
+                            model.login()
+                        }
+                    
+                    ActionButton(state: $model.buttonState, onTap: {
+                        model.login()
+                    }, backgroundColor: .primary)
+                }
 
+            } label: {
+                Label("Welcome back", systemImage: "hand.wave.fill")
+            }
+            .padding()
+        .textFieldStyle(.plain)
+        
+                }
                     }
-                
-                        }
-        
-        
+
+
+
+struct PasswordField: View{
+    let title: String
+ @Binding var text: String
+    @State private var passwordHidden: Bool = true
+    var body: some View {
+        ZStack(alignment: .trailing){
+            if passwordHidden {
+                SecureField(title, text: $text)
+            } else {
+                TextField(title, text: $text)
+                    .disableAutocorrection(true)
+            }
+            Button {
+                passwordHidden.toggle()
+            } label: {
+                Image(systemName: passwordHidden ? "eye.slash" : "eye")
+            }
+            .foregroundColor(.primary)
+
+        }
+        .frame( height: 18)
     }
 }
+
+class ViewModel: ObservableObject {
+    @Published var buttonState: ActionButtonState = .disabled(title: "Fill out all fields to login!", systemImage: "exclamationmark.circle")
+    
+    @Published var email: String = ""
+    @Published var password: String = ""
+    
+    private var cancellable: Set<AnyCancellable> = []
+    
+    private var emailIsValidPublisher: AnyPublisher<Bool, Never> {
+        $email
+            .map { value in
+                !value.isEmpty
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var passwordIsValidPublisher: AnyPublisher<Bool, Never> {
+        $password
+            .map { value in
+                !value.isEmpty
+            }
+            .eraseToAnyPublisher()
+    }
+    init() {
+        emailIsValidPublisher
+            .combineLatest(passwordIsValidPublisher)
+            .map { value1, value2 in
+                value1 && value2
+            }
+            .map { fieldsValid -> ActionButtonState in
+                if fieldsValid {
+                    return .enabled(title: "Login", systemImage: "checkmark.circle")
+                }
+                return .disabled(title: "Fill out all fields to login!", systemImage: "exclamationmark.circle")
+            }
+            .assign(to: \.buttonState, on: self)
+            .store(in: &cancellable)
+            
+    }
+    
+    func login() {
+        buttonState = .loading(title: "Loading", systemImage: "person")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.buttonState = .enabled(title: "Login", systemImage: "checkmark.circle")
+        }
+        
+    }
+    
+
+    
+        
+}
+    
 
 struct SeconedView_Previews: PreviewProvider {
     static var previews: some View {
@@ -83,15 +143,4 @@ struct SeconedView_Previews: PreviewProvider {
     }
 }
 
-extension View{
-func placeholder<Content: View>(
-      when shouldShow: Bool,
-      alignment: Alignment = .leading,
-      @ViewBuilder placeholder: () -> Content) -> some View {
 
-      ZStack(alignment: alignment) {
-          placeholder().opacity(shouldShow ? 1 : 0)
-          self
-      }
-  }
-}
