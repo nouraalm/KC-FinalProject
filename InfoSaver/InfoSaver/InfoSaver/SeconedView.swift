@@ -8,125 +8,70 @@ import ActionButton
 import Combine
 import SwiftUI
 
-enum FocusableField: Hashable {
-    case email, password
-}
+
 
 struct SeconedView: View {
-    @StateObject private var model = ViewModel()
-    @FocusState private var focus: FocusableField?
-    @State var presentThirdView = false
+    @State private var password = ""
+    @State private var presentThirdView = false
     
     var body: some View {
         
-         
-            GroupBox {
-                VStack(spacing: 16) {
-                    Image("WelcomeCat")
-                        .resizable()
-                        .scaledToFit()
-                    
-                    TextField("Email", text: $model.email)
-                        .textContentType(.emailAddress)
-                        .keyboardType(.emailAddress)
-                        .submitLabel(.next)
-                        .focused($focus, equals: .email)
-                        .onSubmit {
-                            focus = .password
-                        }
-                    
-                    PasswordField(title: "Password", text: $model.password)
-                        .focused($focus, equals: .password)
-                        .submitLabel(.go)
-                        .onSubmit {
-                            model.login()
-                        }
-                    
-                    ActionButton(state: $model.buttonState, onTap: {
-                        model.login()
-                    }, backgroundColor: .primary)
-                }
-
-            } label: {
-                Label("Welcome back", systemImage: "hand.wave.fill")
-            }
-            .padding()
-        .textFieldStyle(.plain)
-        
-                }
-                    }
-
-
-
-struct PasswordField: View{
-    let title: String
- @Binding var text: String
-    @State private var passwordHidden: Bool = true
-    var body: some View {
-        ZStack(alignment: .trailing){
-            if passwordHidden {
-                SecureField(title, text: $text)
-            } else {
-                TextField(title, text: $text)
-                    .disableAutocorrection(true)
-            }
-            Button {
-                passwordHidden.toggle()
-            } label: {
-                Image(systemName: passwordHidden ? "eye.slash" : "eye")
-            }
-            .foregroundColor(.primary)
-
-        }
-        .frame( height: 18)
-    }
-}
-
-class ViewModel: ObservableObject {
-    @Published var buttonState: ActionButtonState = .disabled(title: "Fill out all fields to login!", systemImage: "exclamationmark.circle")
-    
-    @Published var email: String = ""
-    @Published var password: String = ""
-    
-    private var cancellable: Set<AnyCancellable> = []
-    
-    private var emailIsValidPublisher: AnyPublisher<Bool, Never> {
-        $email
-            .map { value in
-                !value.isEmpty
-            }
-            .eraseToAnyPublisher()
-    }
-    
-    private var passwordIsValidPublisher: AnyPublisher<Bool, Never> {
-        $password
-            .map { value in
-                !value.isEmpty
-            }
-            .eraseToAnyPublisher()
-    }
-    init() {
-        emailIsValidPublisher
-            .combineLatest(passwordIsValidPublisher)
-            .map { value1, value2 in
-                value1 && value2
-            }
-            .map { fieldsValid -> ActionButtonState in
-                if fieldsValid {
-                    return .enabled(title: "Login", systemImage: "checkmark.circle")
-                }
-                return .disabled(title: "Fill out all fields to login!", systemImage: "exclamationmark.circle")
-            }
-            .assign(to: \.buttonState, on: self)
-            .store(in: &cancellable)
+        ZStack {
+            Color.theme.buttton
+                .ignoresSafeArea()
             
-    }
-    
-    func login() {
-        buttonState = .loading(title: "Loading", systemImage: "person")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-            self?.buttonState = .enabled(title: "Login", systemImage: "checkmark.circle")
+            Color.white
+                .cornerRadius(48)
+                .frame(width: 345, height: 650, alignment: .center)
+                .position(x: 186, y: 290)
+            
+            Image("Safe")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 380, height: 200)
+                .position(x: 190, y: 10)
+                
+            
+            VStack{
+                Text("Enter your Password")
+                    .font(.system(size: 30, weight: .bold, design: .serif))
+                
+                Text("For the security of your account, please enter your password")
+                    .padding(.bottom,30)
+                    .frame(width: 300, height: 80)
+                    .foregroundColor(.gray)
+                
+                
+                
+                SecureField("Enter Password", text: $password)
+                    .padding()
+                    .frame(width: 360, height: 30)
+                    .font(.system(size: 20, weight: .semibold, design: .default))
+                    .background(.gray.opacity(0.09))
+                    .foregroundColor(.black)
+                    
+                    
+                    
+                
+                Button(action:{
+                    if (password == "223344") {
+                        presentThirdView.toggle()
+                    }
+                    
+                }){
+                    Text("Sign In")
+                        .frame(width: 310, height: 35)
+                        .background(Color.theme.buttton)
+                        .cornerRadius(20)
+                        .foregroundColor(.white)
+                    
+                    
+                } .sheet(isPresented: $presentThirdView) {
+                    ThirdView()
+                }
+            }
         }
+
         
     }
     

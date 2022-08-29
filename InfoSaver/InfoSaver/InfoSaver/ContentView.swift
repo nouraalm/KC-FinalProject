@@ -28,11 +28,12 @@ struct ContentView: View {
                     Text("Manage all your presonal accounts In one place easily ")
                         
                         .frame(width: 280, height: 100, alignment: .center)
-                        .position(x: 190, y: -20)
+                        .position(x: 190, y: -65)
                        
                     
                     NavigationLink(destination: SeconedView()) {
                         myButton(name: "Get started")
+                            .position(x: 185, y: -15)
                             
                             
                     }
