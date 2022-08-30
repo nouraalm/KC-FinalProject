@@ -12,6 +12,7 @@ import SwiftUI
 
 struct SeconedView: View {
     @State private var password = ""
+    @State private var username = ""
     @State private var presentThirdView = false
     
     var body: some View {
@@ -41,24 +42,34 @@ struct SeconedView: View {
                     .frame(width: 300, height: 80)
                     .foregroundColor(.gray)
                 
-                
-                
-                SecureField("Enter Password", text: $password)
+                TextField("Enter your username", text: $username)
                     .padding()
-                    .frame(width: 360, height: 30)
+                    .frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .background(.gray.opacity(0.09))
                     .foregroundColor(.black)
+                    .cornerRadius(5)
+                
+                SecureField("Enter Password", text: $password)
+                    .padding()
+                    .frame(width: 330, height: 30)
+                    .font(.system(size: 20, weight: .semibold, design: .default))
+                    .background(.gray.opacity(0.09))
+                    .foregroundColor(.black)
+                    .cornerRadius(5)
+                
                     
-                    
+               
+
                     
                 
                 Button(action:{
-                    if (password == "223344") {
+                    if (password == "223344" && username == "Noura") {
                         presentThirdView.toggle()
+                       
                     }
                     
-                }){
+                }) {
                     Text("Sign In")
                         .frame(width: 310, height: 35)
                         .background(Color.theme.buttton)

@@ -30,7 +30,6 @@ struct ContentView: View {
                         .frame(width: 280, height: 100, alignment: .center)
                         .position(x: 190, y: -65)
                        
-                    
                     NavigationLink(destination: SeconedView()) {
                         myButton(name: "Get started")
                             .position(x: 185, y: -15)
@@ -39,7 +38,7 @@ struct ContentView: View {
                     }
 
                     .navigationBarHidden(true)
-            }
+                } 
         }
     }
 }

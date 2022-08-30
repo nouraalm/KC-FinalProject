@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ThirdView: View {
+var apps = Appslist
     var body: some View {
-        ZStack {
-            Color.indigo.ignoresSafeArea()
-            Text("Thrid Screen")
-                .font(.largeTitle)
+        
+        NavigationView {
+            List{
+                ForEach(apps, id:\.self) { app in
+                    NavigationLink(destination: DetailView()) {
+                        Image(systemName: "apps.iphone")
+                        Text(app)
+                    } .padding()
+                }
+                .navigationTitle("Your Apps")
+            }
+       
         }
         
-    }
+        
+        
+        
+        }
+    
 }
 
 struct ThirdView_Previews: PreviewProvider {
@@ -23,3 +36,5 @@ struct ThirdView_Previews: PreviewProvider {
         ThirdView()
     }
 }
+
+
