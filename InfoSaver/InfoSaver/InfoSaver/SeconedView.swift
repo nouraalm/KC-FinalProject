@@ -21,7 +21,7 @@ struct SeconedView: View {
             Color.theme.buttton
                 .ignoresSafeArea()
             
-            Color.white
+            Color.theme.bg
                 .cornerRadius(48)
                 .frame(width: 345, height: 650, alignment: .center)
                 .position(x: 186, y: 290)
@@ -34,15 +34,19 @@ struct SeconedView: View {
                 
             
             VStack{
-                Text("Enter your Password")
-                    .font(.system(size: 30, weight: .bold, design: .serif))
+                Text("Welcome \(username) !")
+                    .font(.system(size: 30, weight: .semibold, design: .serif))
+                    .foregroundColor(Color.theme.buttton)
+                    .padding()
                 
-                Text("For the security of your account, please enter your password")
-                    .padding(.bottom,30)
-                    .frame(width: 300, height: 80)
+                Text("For the security of your account, please enter your username and password")
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .frame(width: 350, height: 100, alignment: .center)
                     .foregroundColor(.gray)
+        
                 
-                TextField("Enter your username", text: $username)
+                
+                TextField("username", text: $username)
                     .padding()
                     .frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
@@ -50,7 +54,7 @@ struct SeconedView: View {
                     .foregroundColor(.black)
                     .cornerRadius(5)
                 
-                SecureField("Enter Password", text: $password)
+                SecureField("Password", text: $password)
                     .padding()
                     .frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
@@ -80,6 +84,9 @@ struct SeconedView: View {
                 } .sheet(isPresented: $presentThirdView) {
                     ThirdView()
                 }
+                
+                
+                
             }
         }
 

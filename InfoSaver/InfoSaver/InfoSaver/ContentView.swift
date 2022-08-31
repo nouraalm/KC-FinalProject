@@ -31,9 +31,23 @@ struct ContentView: View {
                         .position(x: 190, y: -65)
                        
                     NavigationLink(destination: SeconedView()) {
-                        myButton(name: "Get started")
-                            .position(x: 185, y: -15)
+                        HStack {
+                            Text("Get started")
+                                .font(.largeTitle)
+                        Image(systemName: "paperplane")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40)
+                                
                             
+                        } .frame(width: 300, height: 40)
+                            .padding()
+                            .background(Color.theme.buttton)
+                            .foregroundColor(.white)
+                            .cornerRadius(40)
+                            .padding(.bottom,10)
+                         //.position(x: 185, y: -15)
                             
                     }
 

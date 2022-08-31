@@ -9,20 +9,25 @@ import SwiftUI
 
 struct ThirdView: View {
 var apps = Appslist
+@State var appstructArray = [
+        appstruct(appname: "Instagram", username: "Noura", password: "1234"),
+        appstruct(appname: "Snapchat", username: "noura7", password: "456")
+    ]
     var body: some View {
-        
+       
         NavigationView {
             List{
-                ForEach(apps, id:\.self) { app in
-                    NavigationLink(destination: DetailView()) {
-                        Image(systemName: "apps.iphone")
-                        Text(app)
-                    } .padding()
-                }
-                .navigationTitle("Your Apps")
+                    ForEach(appstructArray) { app in
+                        NavigationLink(destination: DetailView2(text: app.username)) {
+                            Image(systemName: "apps.iphone")
+                            Text(app.appname)
+                        } .padding()
+                    }
+                    .navigationTitle("Your Apps")
             }
-       
         }
+       
+        
         
         
         
