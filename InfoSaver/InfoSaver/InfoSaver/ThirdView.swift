@@ -18,7 +18,7 @@ var apps = Appslist
         NavigationView {
             List{
                     ForEach(appstructArray) { app in
-                        NavigationLink(destination: DetailView2(text: app.username)) {
+                        NavigationLink(destination: DetailView2(username: app.username, password: app.password)) {
                             Image(systemName: "apps.iphone")
                             Text(app.appname)
                         } .padding()

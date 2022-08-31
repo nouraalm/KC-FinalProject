@@ -14,7 +14,7 @@ struct SeconedView: View {
     @State private var password = ""
     @State private var username = ""
     @State private var presentThirdView = false
-    
+    @State var total = ""
     var body: some View {
         
         ZStack {
@@ -33,8 +33,8 @@ struct SeconedView: View {
                 .position(x: 190, y: 10)
                 
             
-            VStack{
-                Text("Welcome \(username) !")
+            VStack {
+                Text("Welcome back \(username) !")
                     .font(.system(size: 30, weight: .semibold, design: .serif))
                     .foregroundColor(Color.theme.buttton)
                     .padding()
@@ -44,11 +44,12 @@ struct SeconedView: View {
                     .frame(width: 350, height: 100, alignment: .center)
                     .foregroundColor(.gray)
         
-                
+                Text(total)
+                .foregroundColor(.red)
                 
                 TextField("username", text: $username)
                     .padding()
-                    .frame(width: 330, height: 30)
+                    //.frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .background(.gray.opacity(0.09))
                     .foregroundColor(.black)
@@ -56,14 +57,14 @@ struct SeconedView: View {
                 
                 SecureField("Password", text: $password)
                     .padding()
-                    .frame(width: 330, height: 30)
+                   // .frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .background(.gray.opacity(0.09))
                     .foregroundColor(.black)
                     .cornerRadius(5)
                 
                     
-               
+                    
 
                     
                 
@@ -71,10 +72,13 @@ struct SeconedView: View {
                     if (password == "223344" && username == "Noura") {
                         presentThirdView.toggle()
                        
+                    } else {
+                      total  = "The username or password is incorrect"
                     }
                     
                 }) {
-                    Text("Sign In")
+                    
+                    Text("Sign in")
                         .frame(width: 310, height: 35)
                         .background(Color.theme.buttton)
                         .cornerRadius(20)
@@ -85,9 +89,16 @@ struct SeconedView: View {
                     ThirdView()
                 }
                 
-                
-                
-            }
+                HStack{
+                Text("Don't have an account?")
+                        .foregroundColor(.gray)
+                NavigationLink(destination: SignupPage()) {
+                  Text("Sign up")
+                        .foregroundColor(Color.theme.buttton)
+                }
+                } .padding()
+            } .frame(width: 320)
+            // Vstack
         }
 
         

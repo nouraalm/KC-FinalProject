@@ -16,10 +16,10 @@ import SwiftUI
 
 
 struct DetailView2: View {
-     var text: String
-    @State var username: String = ""
-    @State var textP: String = ""
-    @State var password: String = ""
+     
+    var username: String
+    
+    var password: String
     
     var body: some View {
        
@@ -27,24 +27,25 @@ struct DetailView2: View {
             Form{
                 
                 Section(header: Text("Your Username:")) {
-                    TextField("Enter your username", text: $username)
+                    Text(username)
+                   // TextField("Enter your username", text: $username)
                      }
                 
                 
-                Section(header: Text("Actions:")){
-                    Button("Save Data")
-                         {
-                        UserDefaults.standard.set(username, forKey: "Key")
-                        //text = username
-                             
-                        print("Saved value: \(username)")
-                    }
-                }
+//                Section(header: Text("Actions:")){
+//                    Button("Save Data")
+//                         {
+//                        UserDefaults.standard.set(username, forKey: "Key")
+//                        //text = username
+//
+//                        print("Saved value: \(username)")
+//                    }
+//                }
                 
                 
-                Section(header: Text("Saved Data")) {
-                    Text(text).lineLimit(3)
-                } //username
+//                Section(header: Text("Saved Data")) {
+//                    Text(text).lineLimit(3)
+//                } //username
                 
                 ///
                 ///
@@ -53,21 +54,22 @@ struct DetailView2: View {
                 
                 
                 Section(header: Text("Your Password:")){
-                    TextField("Enter your password", text: $password)
+                    Text(password)
+                    //TextField("Enter your password", text: $password)
                 }
                 
-                Section(header: Text("Actions:")) {
-                    Button("Saved Data")
-                    {
-                        UserDefaults.standard.set(password, forKey: "Keyp")
-                        textP = password
-                        print("Saved value: \(password)")
-                    }
-                    
-                                    }
-                Section(header: Text("Saved Data")){
-                    Text(textP).lineLimit(3)
-                } //password
+//                Section(header: Text("Actions:")) {
+//                    Button("Saved Data")
+//                    {
+//                        UserDefaults.standard.set(password, forKey: "Keyp")
+//                        textP = password
+//                        print("Saved value: \(password)")
+//                    }
+//
+//                                    }
+//                Section(header: Text("Saved Data")){
+//                    Text(textP).lineLimit(3)
+//                } //password
 
             }  //form
         
@@ -76,7 +78,7 @@ struct DetailView2: View {
 
 struct DetailView2_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView2(text: "noura")
+        DetailView2(username: "nour", password: "283")
     }
 }
 
