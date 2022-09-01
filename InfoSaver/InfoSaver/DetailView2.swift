@@ -10,59 +10,32 @@ import SwiftUI
 struct DetailView2: View {
     var username: String
     var password: String
+    var email: String
+    var phonenumb: String
     var body: some View {
         Form{
             
             Section(header: Text("Your Username:")) {
                 Text(username)
-               // TextField("Enter your username", text: $username)
-                 }
-            
-            
-//                Section(header: Text("Actions:")){
-//                    Button("Save Data")
-//                         {
-//                        UserDefaults.standard.set(username, forKey: "Key")
-//                        //text = username
-//
-//                        print("Saved value: \(username)")
-//                    }
-//                }
-            
-            
-//                Section(header: Text("Saved Data")) {
-//                    Text(text).lineLimit(3)
-//                } //username
-            
-            ///
-            ///
-            ///
-            ///
-            
-            
+            }
+          
             Section(header: Text("Your Password:")){
                 Text(password)
-                //TextField("Enter your password", text: $password)
+                
             }
             
-//                Section(header: Text("Actions:")) {
-//                    Button("Saved Data")
-//                    {
-//                        UserDefaults.standard.set(password, forKey: "Keyp")
-//                        textP = password
-//                        print("Saved value: \(password)")
-//                    }
-//
-//                                    }
-//                Section(header: Text("Saved Data")){
-//                    Text(textP).lineLimit(3)
-//                } //password
-
-        }
+            Section(header: Text("Your Email:")){
+                Text(email)
+            }
+            
+            Section(header: Text("Your phone number:")){
+                Text(phonenumb)
+            }
+        } //form
 }
 }
 struct DetailView2_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView2(username: "noura", password: "2345")
+        DetailView2(username: "sj", password: "aihud", email: "ksjhf", phonenumb: "kja")
     }
 }

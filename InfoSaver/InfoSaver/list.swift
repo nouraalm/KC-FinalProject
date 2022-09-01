@@ -14,9 +14,9 @@ struct appstruct: Identifiable{
     var appname: String
     var username: String
     var password: String
+    var email: String
+    var phonenumb: String
 }
 
 
-var Appslist = [
-    "Instagram", "Snapchat", "Facebook", "8 ball pool", "WhatsApp"
-]
+
