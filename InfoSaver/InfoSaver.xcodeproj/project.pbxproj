@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E9733DF28C1F1E000E3A364 /* testpassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9733DE28C1F1E000E3A364 /* testpassView.swift */; };
 		0EDFE0C128C0E76D00600DCF /* InfoSaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0C028C0E76D00600DCF /* InfoSaverApp.swift */; };
 		0EDFE0C328C0E76D00600DCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0C228C0E76D00600DCF /* ContentView.swift */; };
 		0EDFE0C528C0E76F00600DCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDFE0C428C0E76F00600DCF /* Assets.xcassets */; };
@@ -19,9 +20,17 @@
 		0EDFE0DB28C0EFDF00600DCF /* myButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0DA28C0EFDF00600DCF /* myButton.swift */; };
 		0EDFE0DD28C0F01100600DCF /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0DC28C0F01100600DCF /* ThirdView.swift */; };
 		0EDFE0DF28C0F0C900600DCF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0DE28C0F0C900600DCF /* DetailView.swift */; };
+		0EDFE0E328C13C5400600DCF /* choosepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0E228C13C5400600DCF /* choosepage.swift */; };
+		0EDFE0E528C13F4200600DCF /* BankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0E428C13F4200600DCF /* BankView.swift */; };
+		0EDFE0E728C13F5000600DCF /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0E628C13F5000600DCF /* GamesView.swift */; };
+		0EDFE0E928C13F5C00600DCF /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0E828C13F5C00600DCF /* OtherView.swift */; };
+		0EDFE0EB28C1423300600DCF /* bankDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0EA28C1423300600DCF /* bankDetailView.swift */; };
+		0EDFE0ED28C1475D00600DCF /* gamesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0EC28C1475D00600DCF /* gamesDetailView.swift */; };
+		0EDFE0EF28C1476D00600DCF /* otherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDFE0EE28C1476D00600DCF /* otherDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E9733DE28C1F1E000E3A364 /* testpassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testpassView.swift; sourceTree = "<group>"; };
 		0EDFE0BD28C0E76D00600DCF /* InfoSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfoSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDFE0C028C0E76D00600DCF /* InfoSaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSaverApp.swift; sourceTree = "<group>"; };
 		0EDFE0C228C0E76D00600DCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +44,13 @@
 		0EDFE0DA28C0EFDF00600DCF /* myButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myButton.swift; sourceTree = "<group>"; };
 		0EDFE0DC28C0F01100600DCF /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 		0EDFE0DE28C0F0C900600DCF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0EDFE0E228C13C5400600DCF /* choosepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choosepage.swift; sourceTree = "<group>"; };
+		0EDFE0E428C13F4200600DCF /* BankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankView.swift; sourceTree = "<group>"; };
+		0EDFE0E628C13F5000600DCF /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		0EDFE0E828C13F5C00600DCF /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		0EDFE0EA28C1423300600DCF /* bankDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankDetailView.swift; sourceTree = "<group>"; };
+		0EDFE0EC28C1475D00600DCF /* gamesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesDetailView.swift; sourceTree = "<group>"; };
+		0EDFE0EE28C1476D00600DCF /* otherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = otherDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +87,20 @@
 				0EDFE0C228C0E76D00600DCF /* ContentView.swift */,
 				0EDFE0D028C0EDA900600DCF /* SeconedView.swift */,
 				0EDFE0D228C0EEA500600DCF /* SignupPage.swift */,
+				0EDFE0E228C13C5400600DCF /* choosepage.swift */,
+				0E9733DE28C1F1E000E3A364 /* testpassView.swift */,
 				0EDFE0DC28C0F01100600DCF /* ThirdView.swift */,
-				0EDFE0D628C0EF2300600DCF /* list.swift */,
-				0EDFE0DE28C0F0C900600DCF /* DetailView.swift */,
 				0EDFE0D828C0EF6700600DCF /* DetailView2.swift */,
+				0EDFE0E828C13F5C00600DCF /* OtherView.swift */,
+				0EDFE0EE28C1476D00600DCF /* otherDetailView.swift */,
+				0EDFE0E628C13F5000600DCF /* GamesView.swift */,
+				0EDFE0EC28C1475D00600DCF /* gamesDetailView.swift */,
+				0EDFE0E428C13F4200600DCF /* BankView.swift */,
+				0EDFE0EA28C1423300600DCF /* bankDetailView.swift */,
 				0EDFE0CE28C0ED7F00600DCF /* colorExtension.swift */,
 				0EDFE0DA28C0EFDF00600DCF /* myButton.swift */,
+				0EDFE0D628C0EF2300600DCF /* list.swift */,
+				0EDFE0DE28C0F0C900600DCF /* DetailView.swift */,
 				0EDFE0C428C0E76F00600DCF /* Assets.xcassets */,
 				0EDFE0C628C0E76F00600DCF /* Preview Content */,
 			);
@@ -161,14 +185,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EDFE0E528C13F4200600DCF /* BankView.swift in Sources */,
+				0EDFE0E328C13C5400600DCF /* choosepage.swift in Sources */,
+				0EDFE0E728C13F5000600DCF /* GamesView.swift in Sources */,
+				0EDFE0EF28C1476D00600DCF /* otherDetailView.swift in Sources */,
 				0EDFE0D728C0EF2300600DCF /* list.swift in Sources */,
 				0EDFE0DD28C0F01100600DCF /* ThirdView.swift in Sources */,
 				0EDFE0D128C0EDA900600DCF /* SeconedView.swift in Sources */,
+				0EDFE0EB28C1423300600DCF /* bankDetailView.swift in Sources */,
 				0EDFE0DF28C0F0C900600DCF /* DetailView.swift in Sources */,
 				0EDFE0CF28C0ED7F00600DCF /* colorExtension.swift in Sources */,
 				0EDFE0DB28C0EFDF00600DCF /* myButton.swift in Sources */,
 				0EDFE0D928C0EF6700600DCF /* DetailView2.swift in Sources */,
+				0EDFE0ED28C1475D00600DCF /* gamesDetailView.swift in Sources */,
+				0E9733DF28C1F1E000E3A364 /* testpassView.swift in Sources */,
 				0EDFE0C328C0E76D00600DCF /* ContentView.swift in Sources */,
+				0EDFE0E928C13F5C00600DCF /* OtherView.swift in Sources */,
 				0EDFE0C128C0E76D00600DCF /* InfoSaverApp.swift in Sources */,
 				0EDFE0D328C0EEA500600DCF /* SignupPage.swift in Sources */,
 			);

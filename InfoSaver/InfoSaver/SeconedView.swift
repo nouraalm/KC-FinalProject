@@ -82,8 +82,8 @@ struct SeconedView: View {
                         .foregroundColor(.white)
                     
                     
-                } .sheet(isPresented: $presentThirdView) {
-                    ThirdView()
+                }  .sheet(isPresented: $presentThirdView) {
+                    choosepage()
                 }
                 
                 HStack{
