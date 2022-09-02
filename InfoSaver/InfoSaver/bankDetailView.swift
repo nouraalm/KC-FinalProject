@@ -14,16 +14,16 @@ struct bankDetailView: View {
     var body: some View {
         Form{
             
-            Section(header: Text("Your Username:")) {
+            Section(header: Text("Bank name:")) {
                 Text(bankname)
             }
           
-            Section(header: Text("Your Password:")){
+            Section(header: Text("Card number:")){
                 Text(cardnumber)
                 
             }
             
-            Section(header: Text("Your Email:")){
+            Section(header: Text("your password:")){
                 Text(password)
             }
             

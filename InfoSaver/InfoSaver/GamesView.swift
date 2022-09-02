@@ -36,8 +36,8 @@ struct GamesView: View {
                                              
                                              Spacer()
                                              
-//                                             Image(systemName: "folder.badge.person.crop")
-//                                                 .foregroundColor(.black)
+                                             Image(systemName: "gamecontroller.fill")
+                                                 .foregroundColor(.black)
                                              
                                              
                                                  
@@ -47,6 +47,22 @@ struct GamesView: View {
                                 
                                      }
                                          
+                                 }
+                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                     Button("Delete"){
+                                         
+                                     }
+                                     .tint(.red)
+                                     Button("Favourite"){
+                                         
+                                     }
+                                     .tint(.green)
+                }
+                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                     Button("Pin"){
+                                         
+                                     }
+                                     .tint(.orange)
                                  }
                     
                 }

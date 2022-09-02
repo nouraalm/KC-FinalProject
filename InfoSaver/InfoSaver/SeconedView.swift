@@ -82,7 +82,9 @@ struct SeconedView: View {
                         .foregroundColor(.white)
                     
                     
-                }  .sheet(isPresented: $presentThirdView) {
+                }
+                
+                 .sheet(isPresented: $presentThirdView) {
                     choosepage()
                 }
                 

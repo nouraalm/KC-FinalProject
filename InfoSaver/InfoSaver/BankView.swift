@@ -29,6 +29,10 @@ struct BankView: View {
                 .foregroundColor(.black)
                 .font(.system(size: 22, weight: .medium, design: .default))
             
+                //.padding()
+            Spacer()
+            Image(systemName: "wallet.pass.fill")
+            
         } .navigationBarTitle("Bank")
                 .padding()
                 .searchable(text: $searchText)
@@ -37,6 +41,22 @@ struct BankView: View {
             
             
             
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            Button("Delete"){
+                
+            }
+            .tint(.red)
+            Button("Favourite"){
+                
+            }
+            .tint(.green)
+}
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            Button("Pin"){
+                
+            }
+            .tint(.orange)
         }
     }
     }

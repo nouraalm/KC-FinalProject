@@ -13,7 +13,17 @@ struct gamesDetailView: View {
     var email: String
     var pass: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form{
+            Section(header: Text("Your Username:")) {
+                Text(username)
+            }
+            Section(header: Text("Your Email:")) {
+                Text(email)
+            }
+            Section(header: Text("Your password:")) {
+                Text(pass)
+            }
+        }
     }
 }
 

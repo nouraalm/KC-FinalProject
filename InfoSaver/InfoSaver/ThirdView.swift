@@ -23,7 +23,7 @@ struct ThirdView: View {
         
            
             
-           // NavigationView {
+         // NavigationView {
                 
                     
 
@@ -31,36 +31,68 @@ struct ThirdView: View {
                   List{
                                      ForEach(searchresult) { app in
                                          
-                                         HStack {
-                                             NavigationLink(destination: DetailView2(username: app.username, password: app.password, email: app.email, phonenumb: app.phonenumb)) {
+                                     HStack {
+                                         
+                                         
+                                         NavigationLink(destination: DetailView2(username: app.username, password: app.password, email: app.email, phonenumb: app.phonenumb)) {
                                                  
                                                  Text(app.appname)
+                                                 
+                                         
                                                      .foregroundColor(.black)
                                                      .font(.system(size: 22, weight: .medium, design: .default))
+                                             
+                                                     
+
+                                                     
                                                  
                                                  Spacer()
                                                  
-                                                 Image(systemName: "folder.badge.person.crop")
+                                                 Image(systemName: "apps.iphone")
                                                      .foregroundColor(.black)
                                                  
+                                                     .navigationTitle("Your Apps")
                                                  
                                                      
-                                             }.navigationTitle("Your Information")
+                                         }
                                                  .padding()
                                                  .searchable(text: $searchText)
+                                                 
+                                                 
+
                                     
-                                         }
+                                     }
+                                     
                                              
                                      }
-                        
+                                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                         Button("Delete"){
+                                             
+                                         }
+                                         .tint(.red)
+                                         Button("Favourite"){
+                                             
+                                         }
+                                         .tint(.green)
                     }
-                
+                                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                         Button("Pin"){
+                                             
+                                         }
+                                         .tint(.orange)
+                                     }
+                                     
+
+                  
               }
-          //  }
-      
+          // }
       
         
-            }
+        
+           }
+//    func delete(index: IndexSet){
+//
+   }
 }
 struct AppsDetailView: View {
     let Appstruct: appstruct

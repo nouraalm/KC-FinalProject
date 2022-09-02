@@ -10,9 +10,9 @@ import SwiftUI
 struct choosepage: View {
     var body: some View {
        
-            NavigationView {
+          NavigationView {
                 ZStack{
-                   
+                    Color.theme.bg.ignoresSafeArea()
                         
                     ScrollView(.horizontal){
                         
@@ -21,25 +21,26 @@ struct choosepage: View {
                         HStack {
                             NavigationLink(destination: ThirdView()) {
                                 buttonname(name: "Apps", image: "Apps-2")
-                            }
+                            } //.navigationBarHidden(true)
                         
                  
                     NavigationLink(destination: BankView()) {
                         buttonname(name: "Bank", image: "wallet")
-                    }
+                    } //.navigationBarHidden(true)
                     
                     NavigationLink(destination: GamesView()) {
                         buttonname(name: "Games", image: "games")
-                    }
+                    } //.navigationBarHidden(true)
                     
                     
                     NavigationLink(destination: OtherView()) {
                         buttonname(name: "Other", image: "other")
-                    }
+                    } //.navigationBarHidden(true)
                     
                     
                     
-                    } .padding()
+                        
+                        } .padding()
                     } .position(x: 200, y: 150)
                     
                     VStack{
@@ -67,8 +68,9 @@ struct choosepage: View {
                             
                         }
                     }
+                    .navigationBarHidden(true)
         }
-            }
+           }
     }
 }
 
@@ -97,7 +99,7 @@ struct buttonname: View {
                 .cornerRadius(0)
                 .frame(width: 300, height: 80)
                // .opacity(0.7)
-                .position(x: 150, y: 280)
+                .position(x: 150, y: 330)
             
                 
             Text(name)
@@ -109,7 +111,7 @@ struct buttonname: View {
                 .background(.ultraThinMaterial)
                 .font(.system(size: 40, weight: .bold, design: .monospaced))
                 .cornerRadius(20)
-                .position(x: 150, y: 363)
+                .position(x: 150, y: 411)
                 
                 
             

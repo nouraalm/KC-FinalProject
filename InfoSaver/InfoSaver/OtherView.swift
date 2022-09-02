@@ -35,17 +35,33 @@ struct OtherView: View {
                                              
                                              Spacer()
                                              
-//                                             Image(systemName: "folder.badge.person.crop")
-//                                                 .foregroundColor(.black)
+                                             Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                                                 .foregroundColor(.black)
                                              
-                                             
+                                                 .navigationTitle("Other")
                                                  
-                                         }.navigationTitle("Other")
+                                         }
                                              .padding()
                                              .searchable(text: $searchText)
                                 
                                      }
                                          
+                                 }
+                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                     Button("Delete"){
+                                         
+                                     }
+                                     .tint(.red)
+                                     Button("Favourite"){
+                                         
+                                     }
+                                     .tint(.green)
+                }
+                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                     Button("Pin"){
+                                         
+                                     }
+                                     .tint(.orange)
                                  }
                     
                 }

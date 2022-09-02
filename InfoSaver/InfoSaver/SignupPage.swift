@@ -40,13 +40,13 @@ struct SignupPage: View {
                     .padding()
                     .background(.ultraThickMaterial)
                 
-                NavigationLink(destination: ThirdView()) {
+                NavigationLink(destination: choosepage()) {
                     Text("Sign up")
                         .frame(width: 310, height: 35)
                         .background(Color.theme.buttton)
                         .cornerRadius(20)
                         .foregroundColor(.white)
-                }
+                } //.navigationBarHidden(true)
             } .frame(width: 320)
             
             
