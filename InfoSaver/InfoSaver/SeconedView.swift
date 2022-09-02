@@ -26,7 +26,7 @@ struct SeconedView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 380, height: 200)
-                .position(x: 190, y: 0)
+                .position(x: 190, y: -5)
 
             
             VStack{
@@ -85,7 +85,8 @@ struct SeconedView: View {
                 }
                 
                  .sheet(isPresented: $presentThirdView) {
-                    choosepage()
+                   // choosepage()
+                     tabBarView()
                 }
                 
                 HStack{

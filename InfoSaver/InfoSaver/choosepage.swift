@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+
+
 struct choosepage: View {
+    
     var body: some View {
-       
-          NavigationView {
+        
+
+         NavigationView {
                 ZStack{
+
+
                     Color.theme.bg.ignoresSafeArea()
                         
                     ScrollView(.horizontal){
@@ -69,8 +75,12 @@ struct choosepage: View {
                         }
                     }
                     .navigationBarHidden(true)
-        }
-           }
+       
+
+
+                }
+              
+          }
     }
 }
 
@@ -99,19 +109,19 @@ struct buttonname: View {
                 .cornerRadius(0)
                 .frame(width: 300, height: 80)
                // .opacity(0.7)
-                .position(x: 150, y: 330)
+                .position(x: 150, y: 310)
             
                 
             Text(name)
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                
                 .padding()
                 
                 .frame(width: 270, height: 58)
-                .background(.ultraThinMaterial)
-                .font(.system(size: 40, weight: .bold, design: .monospaced))
+                .background(.black .opacity(0.3))
+                .font(.system(size: 40, weight: .bold, design: .rounded))
                 .cornerRadius(20)
-                .position(x: 150, y: 411)
+                .position(x: 150, y: 382)
                 
                 
             

@@ -18,6 +18,8 @@ struct appstruct: Identifiable{
     var phonenumb: String
 }
 
+
+
 public struct appstructArray {
     static func all() -> [appstruct] {
         

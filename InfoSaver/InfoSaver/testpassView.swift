@@ -36,34 +36,52 @@ struct testpassView: View {
             }
     }
     var body: some View {
-        ScrollView {
-            Image("undraw_security_on_re_e491")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
-            Text("How strong is your password ?")
-                .font(.title2)
-                .padding()
-            TextField("Enter your password", text: $password).textFieldStyle(.roundedBorder).frame(width: 250)
-            
-            if chackStrength(password) == 0 {
-                Text("Weak").foregroundColor(Color.red).font(.system(size: 30)).padding()
-            } else {
-                Text("Strong").foregroundColor(Color.green).font(.system(size: 30)).padding()
-            }
-            Text("How to create a secure password : ")
-                .font(.largeTitle)
-                .padding()
-            
-            VStack{
+        ZStack {
+            Color.theme.bg.ignoresSafeArea()
+            ScrollView {
+    //            Image("undraw_security_on_re_e491")
+    //                .resizable()
+    //                .scaledToFit()
+    //                .padding()
+                VStack{
+                    
+                Text("How strong is your password ?")
+                    .font(.system(size: 23, weight: .bold, design: .serif))
+                    .padding(.top, 80)
+                TextField("Enter your password", text: $password).textFieldStyle(.roundedBorder).frame(width: 250)
+                
+                if chackStrength(password) == 0 {
+                    Text("Weak").foregroundColor(Color.red).font(.system(size: 30)).padding()
+                } else {
+                    Text("Strong").foregroundColor(Color.green).font(.system(size: 30)).padding()
+                    
+                }
+                } .frame(width: 400)
+                
+                VStack{
+                    Rectangle()
+                        .frame(width: 300, height: 1)
+                    Text("How to create a secure password : ")
+                        .font(.system(size: 25, weight: .light, design: .rounded))
+                        .padding()
+                    securepass(name: "A password should be 16 characters or more")
+                    Divider()
+                    securepass(name:"    A password should include a combination of letters, numbers, and characters")
+                    Divider()
+                    securepass(name: "A password shouldn’t be shared with any other account")
+                    
+                    
+                    
+                    
+                } .frame(width: 380, height: 430)
+                
+                
+                //                    .background(Color.theme.buttton)
+//                    .cornerRadius(40)
+                
+                
                
-                securepass(name: "A password should be 16 characters or more")
-                Divider()
-                securepass(name:"    A password should include a combination of letters, numbers, and characters")
-                Divider()
-                securepass(name: "A password shouldn’t be shared with any other account")
-                Divider()
+                
                 
                 
             }
@@ -85,14 +103,15 @@ struct securepass: View {
     var body: some View {
         HStack{
             Image(systemName: "circle.fill")
-                .foregroundColor(Color.theme.buttton)
+                .foregroundColor(Color.theme.buttton.opacity(0.5))
             Spacer()
                 
-            Text(name)
-                .font(.title2)
-            
+            Text(name).font(.system(size: 23, weight: .ultraLight, design: .rounded))
+            Spacer()
             
         }
         .frame(width: 300)
+        
+        
     }
 }

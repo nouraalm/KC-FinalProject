@@ -10,6 +10,8 @@ import SwiftUI
 struct ThirdView: View {
 
     @State private var searchText: String = ""
+    
+
 
     private var searchresult: [appstruct] {
         let result = appstructArray.all()
@@ -18,6 +20,7 @@ struct ThirdView: View {
             $0.appname.lowercased().contains(searchText.lowercased()) || $0.appname.contains(searchText)
         }
     }
+    @State var NewItem = ""
    
     var body: some View {
         
@@ -27,9 +30,23 @@ struct ThirdView: View {
                 
                     
 
-              VStack {
+        VStack {
+            
+                 
+                  
                   List{
+//                      Button {
+//                          //
+//                      } label: {
+//                          Image(systemName: "plus")
+//                              .frame(width: 310, height: 40)
+//                              .background(.green)
+//                              .foregroundColor(.white)
+//                              .cornerRadius(10)
+//
+//                      }
                                      ForEach(searchresult) { app in
+
                                          
                                      HStack {
                                          
@@ -57,9 +74,6 @@ struct ThirdView: View {
                                          }
                                                  .padding()
                                                  .searchable(text: $searchText)
-                                                 
-                                                 
-
                                     
                                      }
                                      
@@ -81,15 +95,25 @@ struct ThirdView: View {
                                          }
                                          .tint(.orange)
                                      }
+                      
                                      
 
                   
               }
           // }
+                  
+                  
       
         
         
-           }
+           } .navigationBarItems(trailing:
+                                                                            
+                                        Button("Add") {
+                                            print("Add new Item")
+                                        }
+            .tint(.green)
+                                    
+                                )
 //    func delete(index: IndexSet){
 //
    }
