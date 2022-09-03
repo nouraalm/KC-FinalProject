@@ -51,9 +51,9 @@ struct testpassView: View {
                 TextField("Enter your password", text: $password).textFieldStyle(.roundedBorder).frame(width: 250)
                 
                 if chackStrength(password) == 0 {
-                    Text("Weak").foregroundColor(Color.red).font(.system(size: 30)).padding()
+                    Text("Weak").foregroundColor(Color.red).font(.system(size: 25)).padding()
                 } else {
-                    Text("Strong").foregroundColor(Color.green).font(.system(size: 30)).padding()
+                    Text("Strong").foregroundColor(Color.green).font(.system(size: 25)).padding()
                     
                 }
                 } .frame(width: 400)

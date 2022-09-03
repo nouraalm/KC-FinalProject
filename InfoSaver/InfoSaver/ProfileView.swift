@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
+        
       ScrollView {
           HStack{
               Image("Untitled design-2")
@@ -21,7 +22,7 @@ struct ProfileView: View {
                   .resizable()
                   .scaledToFit()
                  
-                  .frame(width: 30, height: 40)
+                  .frame(width: 30, height: 30)
                   .padding()
               
           } .padding(.top,20)
@@ -42,9 +43,13 @@ struct ProfileView: View {
          details(image: "phone", text: "Contact Us")
         details(image: "privacy", text: "PrivacyPolicy")
           details(image: "terms", text: "Terms And Condition")
-           details(image: "logout", text: "Logout")
-        }
+          details(image: "logout", text: "Logout")
+          
+          
+          
+          
         
+      }
     }
 }
 

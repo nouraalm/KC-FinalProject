@@ -24,10 +24,10 @@ struct ContentView: View {
                         .position(x: 190, y: -40)
                         
                     
-                    Text("Manage all your presonal accounts In one place easily ")
-                        
-                        .frame(width: 280, height: 100, alignment: .center)
-                        .position(x: 190, y: -65)
+                    Text("Manage all your presonal accounts In one place easily ...")
+                        .font(.system(size: 20, weight: .ultraLight, design: .default))
+                        .frame(width: 290, height: 100, alignment: .center)
+                        .position(x: 150, y: -65)
                        
                     NavigationLink(destination: SeconedView()) {
                         HStack {
@@ -40,13 +40,15 @@ struct ContentView: View {
                                 .frame(width: 40, height: 40)
                                 
                             
-                        } .frame(width: 300, height: 40)
+                        } .frame(width: 255, height: 35)
                             .padding()
                             .background(Color.theme.buttton)
+                    
                             .foregroundColor(.white)
                             .cornerRadius(40)
+                        
                             .padding(.bottom,10)
-                         //.position(x: 185, y: -15)
+                         .position(x: 195, y: 20)
                             
                     }
 

@@ -13,7 +13,7 @@ struct myButton: View {
     var body: some View {
         Text(name)
             .foregroundColor(.white)
-            .font(.system(size: 30, weight: .bold, design: .rounded))
+            .font(.system(size: 20, weight: .bold, design: .rounded))
             .padding()
             .background(Color.theme.buttton)
             .cornerRadius(20)

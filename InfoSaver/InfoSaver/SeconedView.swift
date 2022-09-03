@@ -66,7 +66,7 @@ struct SeconedView: View {
                     
                 
                 Button(action:{
-                    if (password == "223344" && username == "Noura") {
+                    if (password == "1" && username == "Noura") {
                         presentThirdView.toggle()
                        
                     } else {

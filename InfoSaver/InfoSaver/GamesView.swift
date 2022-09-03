@@ -9,14 +9,28 @@ import SwiftUI
 
 struct GamesView: View {
     @State private var searchText: String = ""
+@State var gamestructArray = [
+    //    static func all() -> [gamestruct]{
+    //        return[
+                gamestruct(gamename: "Steam", username: "@noura93", email: "exampleemail@gmail.com", pass: "Cfha87078"),
+                gamestruct(gamename: "Epic", username: "@no987", email: "exampleemail@gmail.com", pass: "Bhja78987"),
+                gamestruct(gamename: "Little nightmare", username: "nourah67", email: "exampleemail@gmail.com", pass: "Nkahgh890"),
+                gamestruct(gamename: "Jump Force", username: "none97", email: "exampleemail@gmail.com", pass: "Auhaj8790"),
+                gamestruct(gamename: "Fortnite", username: "nosh29", email: "exampleemail@gmail.com", pass: "Jiagi9768"),
+                gamestruct(gamename: "Resident Evil2", username: "n676_", email: "exampleemail@gmail.com", pass: "Njha9877"),
+                gamestruct(gamename: "Dead by Daylight", username: "nourah22", email: "exampleemail@gmail.com", pass: "Nk98790")
+                
+    //        ]
+    //    }
+    ]
 
-    private var searchresult: [gamestruct] {
-        let result = gamestructArray.all()
-        if searchText.isEmpty { return result }
-        return result.filter {
-            $0.gamename.lowercased().contains(searchText.lowercased()) || $0.gamename.contains(searchText)
-        }
-    }
+//    private var searchresult: [gamestruct] {
+//        let result = gamestructArray.all()
+//        if searchText.isEmpty { return result }
+//        return result.filter {
+//            $0.gamename.lowercased().contains(searchText.lowercased()) || $0.gamename.contains(searchText)
+//        }
+//    }
 
     var body: some View {
     //    NavigationView {
@@ -25,7 +39,7 @@ struct GamesView: View {
 
           VStack {
               List{
-                                 ForEach(searchresult) { game in
+                                 ForEach(gamestructArray) { game in
                                      
                                      HStack {
                                          NavigationLink(destination: gamesDetailView(gamename: game.gamename, username: game.username, email: game.email, pass: game.pass)) {
@@ -67,7 +81,15 @@ struct GamesView: View {
                     
                 }
             
-          }
+          } .navigationBarItems(trailing:
+                                    
+                                    Button("Add") {
+                                        print("Add new Item")
+                        gamestructArray.append(gamestruct(gamename: "", username: "", email: "", pass: ""))
+                                    }
+                            .tint(.green)
+                                
+                            )
        // }
     }
 }

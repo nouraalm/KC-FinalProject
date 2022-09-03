@@ -62,10 +62,10 @@ struct choosepage: View {
                     NavigationLink(destination: testpassView()) {
                         
                         
-                        Text("Test your password")
-                            
+                        Text("How Strong Is My Password ?")
+                            .font(.title3)
                             .foregroundColor(.white)
-                            .frame(width: 200, height: 50)
+                            .frame(width: 290, height: 50)
                             .background(Color("purple"))
                             .cornerRadius(20)
                             .padding()
@@ -109,7 +109,7 @@ struct buttonname: View {
                 .cornerRadius(0)
                 .frame(width: 300, height: 80)
                // .opacity(0.7)
-                .position(x: 150, y: 310)
+                .position(x: 150, y: 308)
             
                 
             Text(name)
