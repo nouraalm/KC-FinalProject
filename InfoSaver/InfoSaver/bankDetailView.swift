@@ -27,7 +27,17 @@ struct bankDetailView: View {
                 Text(password)
             }
             
-                    }
+                    } .navigationBarItems(trailing:
+                                            
+                                            Button(action: {
+                        //
+                    }, label: {
+                        Image(systemName: "square.and.pencil")
+                    })
+                .tint(.black)
+                                        
+                                    )
+
     }
 }
 

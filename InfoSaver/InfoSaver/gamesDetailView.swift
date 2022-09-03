@@ -23,7 +23,19 @@ struct gamesDetailView: View {
             Section(header: Text("Your password:")) {
                 Text(pass)
             }
-        }
+        } .navigationBarItems(trailing:
+                                
+                                Button(action: {
+            //
+        }, label: {
+            Image(systemName: "square.and.pencil")
+        })
+    .tint(.black)
+                            
+                        )
+                            
+                        
+
     }
 }
 

@@ -35,7 +35,16 @@ struct otherDetailView: View {
             Section(header: Text("Your phone number:")){
                 Text(pass)
             }
-        }
+        } .navigationBarItems(trailing:
+                                
+                                Button(action: {
+            //
+        }, label: {
+            Image(systemName: "square.and.pencil")
+        })
+    .tint(.black)
+                            
+                        )
     }
 }
 

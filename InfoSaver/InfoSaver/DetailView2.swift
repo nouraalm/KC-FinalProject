@@ -13,25 +13,39 @@ struct DetailView2: View {
     var email: String
     var phonenumb: String
     var body: some View {
-        Form{
+       // VStack {
             
-            Section(header: Text("Your Username:")) {
-                Text(username)
-            }
-          
-            Section(header: Text("Your Password:")){
-                Text(password)
+            Form{
                 
-            }
-            
-            Section(header: Text("Your Email:")){
-                Text(email)
-            }
-            
-            Section(header: Text("Your phone number:")){
-                Text(phonenumb)
-            }
-        } //form
+                
+                Section(header: Text("Your Username:")) {
+                    Text(username)
+                }
+              
+                Section(header: Text("Your Password:")){
+                    Text(password)
+                    
+                }
+                
+                Section(header: Text("Your Email:")){
+                    Text(email)
+                }
+                
+                Section(header: Text("Your phone number:")){
+                    Text(phonenumb)
+                }
+            } .navigationBarItems(trailing:
+                                    
+                                    Button(action: {
+                //
+            }, label: {
+                Image(systemName: "square.and.pencil")
+            })
+        .tint(.black)
+                                
+                            )
+
+        //} //form
 }
 }
 struct DetailView2_Previews: PreviewProvider {
