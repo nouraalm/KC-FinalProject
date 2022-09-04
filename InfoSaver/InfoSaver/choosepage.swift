@@ -31,7 +31,7 @@ struct choosepage: View {
                         
                  
                     NavigationLink(destination: BankView()) {
-                        buttonname(name: "Bank", image: "wallet")
+                        buttonname(name: "Credit Card", image: "CreditCard1")
                     } //.navigationBarHidden(true)
                     
                     NavigationLink(destination: GamesView()) {
@@ -109,7 +109,7 @@ struct buttonname: View {
                 .cornerRadius(0)
                 .frame(width: 300, height: 80)
                // .opacity(0.7)
-                .position(x: 150, y: 308)
+                .position(x: 150, y: 302)
             
                 
             Text(name)
@@ -121,7 +121,7 @@ struct buttonname: View {
                 .background(.black .opacity(0.3))
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .cornerRadius(20)
-                .position(x: 150, y: 382)
+                .position(x: 150, y: 380)
                 
                 
             
