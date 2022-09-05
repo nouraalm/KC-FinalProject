@@ -121,8 +121,8 @@ struct ThirdView: View {
            } .navigationBarItems(trailing:
                                                                             
                                         Button("Add") {
-                                            print("Add new Item")
-               appstructArray2.append(appstruct(appname: "", username: "Twitter", password: "7788123AS#", email: "exampleemail@gamail.com", phonenumb: "-"))
+                                            //print("Add new Item")
+               appstructArray2.append(appstruct(appname: "Twitter", username: "noura80", password: "7788123AS#", email: "exampleemail@gamail.com", phonenumb: "-"))
                                         }
             .tint(.green)
                                     

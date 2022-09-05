@@ -17,24 +17,24 @@ struct otherDetailView: View {
         Form{
             
             Section(header: Text("Your Username:")) {
-                Text(name)
+                Text(username)
             }
           
-            Section(header: Text("Your Password:")){
-                Text(username)
+            Section(header: Text("Your Email:")){
+                Text(email)
                 
             }
             
-            Section(header: Text("Your Email:")){
-                Text(email)
-            }
-            
-            Section(header: Text("Your phone number:")){
+            Section(header: Text("Your Phone Number:")){
                 Text(phonenumb)
             }
-            Section(header: Text("Your phone number:")){
-                Text(pass)
+            
+            Section(header: Text("Your Password:")){
+                Text(phonenumb)
             }
+//            Section(header: Text("Your phone number:")){
+//                Text(pass)
+//            }
         } .navigationBarItems(trailing:
                                 
                                 Button(action: {

@@ -47,7 +47,7 @@ struct BankView: View {
             Spacer()
             Image(systemName: "wallet.pass.fill")
             
-        } .navigationBarTitle("Bank")
+        } .navigationBarTitle("Credit Card")
                 .padding()
                 .searchable(text: $searchText)
             
