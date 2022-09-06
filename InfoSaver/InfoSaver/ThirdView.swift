@@ -68,7 +68,7 @@ struct ThirdView: View {
                                                  Text(app.appname)
                                                  
                                          
-                                                     .foregroundColor(.black)
+                                                     //.foregroundColor(.black)
                                                      .font(.system(size: 22, weight: .medium, design: .default))
                                              
                                                      
@@ -78,7 +78,7 @@ struct ThirdView: View {
                                                  Spacer()
                                                  
                                                  Image(systemName: "apps.iphone")
-                                                     .foregroundColor(.black)
+                                                     //.foregroundColor(.black)
                                                  
                                                      .navigationTitle("Your Apps")
                                                  

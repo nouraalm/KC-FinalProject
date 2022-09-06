@@ -45,13 +45,13 @@ struct OtherView: View {
                                          NavigationLink(destination: otherDetailView(name: other.name, username: other.username, email: other.email, phonenumb: other.phonenumb, pass: other.pass)) {
                                              
                                              Text(other.name)
-                                                 .foregroundColor(.black)
+                                                // .foregroundColor(.black)
                                                  .font(.system(size: 22, weight: .medium, design: .default))
                                              
                                              Spacer()
                                              
                                              Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                                                 .foregroundColor(.black)
+                                                 //.foregroundColor(.black)
                                              
                                                  .navigationTitle("Other")
                                                  

@@ -16,12 +16,13 @@ struct ProfileView: View {
                   .resizable()
                   .scaledToFit()
                   .frame(width: 50, height: 40)
+                 
+              
               Text("InfoSaver")
               Spacer()
               Image(systemName: "bell")
                   .resizable()
                   .scaledToFit()
-                 
                   .frame(width: 30, height: 30)
                   .padding()
               

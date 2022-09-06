@@ -40,7 +40,7 @@ struct BankView: View {
         NavigationLink(destination: bankDetailView(bankname: bank.bankname, cardnumber: bank.cardnumber, password: bank.password)) {
             
             Text(bank.bankname)
-                .foregroundColor(.black)
+                //.foregroundColor(.black)
                 .font(.system(size: 22, weight: .medium, design: .default))
             
                 //.padding()

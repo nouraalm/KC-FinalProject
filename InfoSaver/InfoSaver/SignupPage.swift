@@ -25,20 +25,24 @@ struct SignupPage: View {
                 Text("Create an account")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
+                
                 Text("Hello \(name) !")
                     .font(.title)
                 
                 TextField("Name", text: $name)
                     .padding()
                     .background(.ultraThickMaterial)
+                    .cornerRadius(5)
                 
                 TextField("Email", text: $email)
                     .padding()
                     .background(.ultraThickMaterial)
+                    .cornerRadius(5)
                 
                 SecureField("Password", text: $pass)
                     .padding()
                     .background(.ultraThickMaterial)
+                    .cornerRadius(5)
                 
                 NavigationLink(destination: choosepage()) {
                     Text("Sign up")

@@ -45,13 +45,13 @@ struct GamesView: View {
                                          NavigationLink(destination: gamesDetailView(gamename: game.gamename, username: game.username, email: game.email, pass: game.pass)) {
                                              
                                              Text(game.gamename)
-                                                 .foregroundColor(.black)
+                                                 //.foregroundColor(.black)
                                                  .font(.system(size: 22, weight: .medium, design: .default))
                                              
                                              Spacer()
                                              
                                              Image(systemName: "gamecontroller.fill")
-                                                 .foregroundColor(.black)
+                                                // .foregroundColor(.black)
                                              
                                              
                                                  

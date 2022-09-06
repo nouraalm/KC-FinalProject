@@ -121,7 +121,7 @@ struct buttonname: View {
                 .background(.black .opacity(0.3))
                 .font(.system(size: 40, weight: .bold, design: .rounded))
                 .cornerRadius(20)
-                .position(x: 150, y: 380)
+                .position(x: 150, y: 382)
                 
                 
             
