@@ -69,6 +69,7 @@ struct details: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 50)
+
             
             Text(text)
                 

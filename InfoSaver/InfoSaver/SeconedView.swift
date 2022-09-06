@@ -50,7 +50,7 @@ struct SeconedView: View {
                     //.frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .background(.gray.opacity(0.09))
-                    .foregroundColor(.black)
+                    //.foregroundColor(.black)
                     .cornerRadius(5)
                 
                 SecureField("Password", text: $password)
@@ -58,7 +58,7 @@ struct SeconedView: View {
                    // .frame(width: 330, height: 30)
                     .font(.system(size: 20, weight: .semibold, design: .default))
                     .background(.gray.opacity(0.09))
-                    .foregroundColor(.black)
+                    //.foregroundColor(.black)
                     .cornerRadius(5)
                 
                     
