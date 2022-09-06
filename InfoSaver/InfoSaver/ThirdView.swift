@@ -15,9 +15,9 @@ struct ThirdView: View {
     //    static func all() -> [appstruct] {
     //
     //        return [
-       appstruct(appname: "Instagram", username: "@noura", password: "1234jt7g", email: "xampleemail@gmail.com", phonenumb: "98655786"),
-       appstruct(appname: "Snapchat", username: "@noura7", password: "456kjh8", email: "xampleemail@gmail.com", phonenumb: "9786578"),
-       appstruct(appname: "TikTok", username: "@nosh", password: "234iuy8h", email: "xampleemail@gmail.com", phonenumb: "94865886"),
+       appstruct(appname: "Instagram", username: "@noura", password: "1234jt7g", email: "exampleemail@gmail.com", phonenumb: "98655786"),
+       appstruct(appname: "Snapchat", username: "@noura7", password: "456kjh8", email: "exampleemail@gmail.com", phonenumb: "9786578"),
+       appstruct(appname: "TikTok", username: "@nosh", password: "234iuy8h", email: "exampleemail@gmail.com", phonenumb: "94865886"),
        appstruct(appname: "YouTube", username: "@noura almethin", password: "7890087j", email: "exampleemail@gmail.com", phonenumb: "98646537"),
        appstruct(appname: "WhatsApp", username: "Nothing", password: "3436kj9kh", email: "exampleemail@gmail.com", phonenumb: "99887766"),
        appstruct(appname: "Facebook", username: "@noura90", password: "8Asd976235", email: "exampleemail@gmail.com", phonenumb: "99335466"),
