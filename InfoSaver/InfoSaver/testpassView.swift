@@ -66,14 +66,14 @@ struct testpassView: View {
                         .padding()
                     securepass(name: "A password should be 16 characters or more")
                     Divider()
-                    securepass(name:"    A password should include a combination of letters, numbers, and characters")
+                    securepass(name:"    A password should include a combination of Uppercase and Lowercase letters, numbers, and symbols")
                     Divider()
                     securepass(name: "A password shouldn’t be shared with any other account")
                     
                     
                     
                     
-                } .frame(width: 380, height: 430)
+                } .frame(width: 380, height: 480)
                 
                 
                 //                    .background(Color.theme.buttton)
