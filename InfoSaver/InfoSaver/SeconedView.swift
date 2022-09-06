@@ -14,6 +14,7 @@ struct SeconedView: View {
     @State var total = ""
     var body: some View {
         ZStack {
+            
             Color.theme.buttton
                 .ignoresSafeArea()
             
@@ -87,7 +88,9 @@ struct SeconedView: View {
                  .sheet(isPresented: $presentThirdView) {
                    // choosepage()
                      tabBarView()
-                }
+                 }
+                    
+                 
                 
                 HStack{
                 Text("Don't have an account?")
@@ -95,7 +98,7 @@ struct SeconedView: View {
                 NavigationLink(destination: SignupPage()) {
                   Text("Sign up")
                         .foregroundColor(Color.theme.buttton)
-                }
+                } .accentColor(.white)
                 } .padding()
             } .frame(width: 320)
             // Vstack

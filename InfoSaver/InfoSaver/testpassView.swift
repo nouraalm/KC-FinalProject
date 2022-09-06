@@ -103,7 +103,7 @@ struct securepass: View {
     var body: some View {
         HStack{
             Image(systemName: "circle.fill")
-                .foregroundColor(Color.theme.buttton.opacity(0.5))
+                .foregroundColor(Color.theme.buttton)
             Spacer()
                 
             Text(name).font(.system(size: 23, weight: .ultraLight, design: .rounded))

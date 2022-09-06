@@ -53,7 +53,7 @@ struct ContentView: View {
                     }
 
                     .navigationBarHidden(true)
-                }
+                } .accentColor(.white)
         }
    }
     }

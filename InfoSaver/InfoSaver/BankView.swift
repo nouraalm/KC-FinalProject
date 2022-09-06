@@ -18,7 +18,7 @@ struct BankView: View {
                     bankstruct(bankname: "Al Ahli Bank", cardnumber: "98655689546", password: "2457"),
                     bankstruct(bankname: "Industrial Bank", cardnumber: "2098490211", password: "3972"),
                     bankstruct(bankname: "NBK - National Bank", cardnumber: "876290170", password: "8569"),
-                    bankstruct(bankname: "Gulf Bank", cardnumber: "86289172840", password: "7272"),
+                    //bankstruct(bankname: "Gulf Bank", cardnumber: "86289172840", password: "7272"),
                     bankstruct(bankname: "KFH - Kuwait Finance House", cardnumber: "8320894022", password: "75829")
             
         //        ]
@@ -45,7 +45,7 @@ struct BankView: View {
             
                 //.padding()
             Spacer()
-            Image(systemName: "wallet.pass.fill")
+            Image(systemName: "creditcard.fill")
             
         } .navigationBarTitle("Credit Card")
                 .padding()
@@ -77,7 +77,7 @@ struct BankView: View {
                             
                             Button("Add") {
                                 print("Add new Item")
-                bankstructArray.append(bankstruct(bankname: "", cardnumber: "", password: ""))
+                bankstructArray.append(bankstruct(bankname: "Gulf Bank", cardnumber: "86289172840", password: "7272"))
                             }
                     .tint(.green)
                         

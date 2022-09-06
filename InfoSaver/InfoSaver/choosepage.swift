@@ -56,7 +56,7 @@ struct choosepage: View {
                             .position(x: 190, y: 400)
                         Spacer()
                         Text("It is important to choose passwords wisely. Check how strong and secure is your password. Improve the strength of your password to stay safe..")
-                            .foregroundColor(.black)
+                            //.foregroundColor()
                             .padding()
                     
                     NavigationLink(destination: testpassView()) {

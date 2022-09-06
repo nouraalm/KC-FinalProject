@@ -85,7 +85,7 @@ struct GamesView: View {
                                     
                                     Button("Add") {
                                         print("Add new Item")
-                        gamestructArray.append(gamestruct(gamename: "", username: "", email: "", pass: ""))
+                        gamestructArray.append(gamestruct(gamename: "WarZone", username: "@nosh67", email: "exampleemail@gmail.com", pass: "24854456sd#"))
                                     }
                             .tint(.green)
                                 

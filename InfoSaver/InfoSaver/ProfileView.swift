@@ -12,7 +12,7 @@ struct ProfileView: View {
         
       ScrollView {
           HStack{
-              Image("Untitled design-2")
+              Image("logo")
                   .resizable()
                   .scaledToFit()
                   .frame(width: 50, height: 40)
