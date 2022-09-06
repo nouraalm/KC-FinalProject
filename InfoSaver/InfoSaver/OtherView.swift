@@ -47,6 +47,8 @@ struct OtherView: View {
                                              Text(other.name)
                                                 // .foregroundColor(.black)
                                                  .font(.system(size: 22, weight: .medium, design: .default))
+                                                 .frame(width: 150)
+
                                              
                                              Spacer()
                                              
@@ -102,9 +104,9 @@ var body: some View{
     HStack {
         VStack(alignment: .leading) {
             Text("\(Otherstruct.name)")
-                .foregroundColor(.black)
+                //.foregroundColor(.black)
                 .font(.system(size: 22, weight: .medium, design: .default))
-                
+                .frame(width: 300)
             Spacer()
         }
         Spacer()

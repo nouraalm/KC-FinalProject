@@ -71,7 +71,7 @@ struct SeconedView: View {
                         presentThirdView.toggle()
                        
                     } else {
-                      total  = "The username or password is incorrect"
+                      total  = "Username or password incorrect"
                     }
                     
                 }) {
